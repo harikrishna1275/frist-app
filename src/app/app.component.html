@@ -1,66 +1,37 @@
 <form class="example-form">
   <mat-form-field class="example-full-width">
     <mat-label>First Name</mat-label>
-    <input matInput placeholder="Ex. shean" >
+    <input matInput placeholder="Ex. shean">
   </mat-form-field>
-  <form class="example-form">
-  <mat-form-field clas<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>First Name</mat-label>
-    <input matInput placeholder="Ex. shean" >
-  </mat-form-field>
-  <form class="example-form">
+<br/>
   <mat-form-field class="example-full-width">
     <mat-label>Last Name</mat-label>
-    <input matInput placeholder="Ex. shean" >
+    <input matInput placeholder="Ex. shean">
   </mat-form-field>
+  <br/>
   <mat-form-field appearance="fill">
     <mat-label>Adress</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
   </mat-form-field>
+  <br/>
   <mat-form-field>
-  <mat-label>Choose a date</mat-label>
-  <input matInput [matDatepicker]="picker">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-
-</mat-form-field>
-<mat-radio-group aria-label="Select an option">
-  <mat-radio-button value="1">Male </mat-radio-button>
-<mat-radio-button value="2">Female</mat-radio-button>
-</mat-radio-group>
-<h4>mat-select</h4>
-<mat-form-field>
-  <mat-label>State</mat-label>
-  <mat-select>
-    <mat-option>None</mat-option>
-    <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-  </mat-select>
-</mat-form-field>
-<mat-form-field class="example-full-width">
-    <mat-label>Last Name</mat-label>
-    <input matInput placeholder="Ex. shean" >
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Adress</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
+  <br/>
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Male </mat-radio-button>
+    <mat-radio-button value="2">Female</mat-radio-button>
+  </mat-radio-group>
+  <br/>
   <mat-form-field>
-  <mat-label>Choose a date</mat-label>
-  <input matInput [matDatepicker]="picker">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-
-</mat-form-field>
-<mat-radio-group aria-label="Select an option">
-  <mat-radio-button value="1">Male </mat-radio-button>
-<mat-radio-button value="2">Female</mat-radio-button>
-</mat-radio-group>
-<h4>mat-select</h4>
-<mat-form-field>
-  <mat-label>State</mat-label>
-  <mat-select>
-    <mat-option>None</mat-option>
-    <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-  </mat-select>
-</mat-form-field>
+    <mat-label>State</mat-label>
+    <mat-select>
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br/>
+</form>
