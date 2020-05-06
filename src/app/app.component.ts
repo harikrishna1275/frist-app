@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hari';
-  states: string[] = ['anmdhra','telagana','tamilnadu'];
+  hari=""
+  mycolor="color: blue;"
+  states: string[] = ['andhra','telagana','tamilnadu'];
+  hello = 'bhaskar'
+  display(){
+    console.log("hello hair,I am pressed");
+    this.hari="hello hari,I am pressed";
+  }
 }
