@@ -27,9 +27,11 @@
   </mat-form-field>
   <br/>
   <mat-radio-group aria-label="Select an option">
-    <mat-radio-button style="padding-right: 10px;color: blue;" value="1">Male </mat-radio-button>
-    <mat-radio-button class="female-sex" value="2">Female</mat-radio-button>
-    <mat-radio-button [style.color]="mycolor" value="2">Female</mat-radio-button>
+    <mat-radio-button style="padding-right: 10px;color: blue;" value="1">Delhi </mat-radio-button>
+    <mat-radio-button class="female-sex" value="2">Hyderabad</mat-radio-button>
+    <mat-radio-button [class]="classExpr" value="2" (change)="radioChange($event)" >Chennai</mat-radio-button>
+    <!-- <mat-radio-button [style]="styleExpr" value="2" (change)="vijayawadaChange($event)" >Vijayawada</mat-radio-button> -->
+    <!-- <mat-radio-button [style.font-size]="font" value="2" (change)="radioChange($event)">Mumbai</mat-radio-button> -->
   </mat-radio-group>
   <br/>
   <mat-form-field>
