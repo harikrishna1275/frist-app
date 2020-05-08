@@ -8,11 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'hari';
   hari="";
+  imageDisplay = true;
   font="xxx-large";
   styleExpr="color: orange;";
   classExpr="female-sex2 position-movement";
   states: string[] = ['andhra','telagana','tamilnadu'];
   hello = 'bhaskar'
+  itemImageUrl="../assets/Spring-Promo.jpg";
   display(){
     console.log("hello hair,I am pressed");
     this.hari="hello hari,I am pressed";

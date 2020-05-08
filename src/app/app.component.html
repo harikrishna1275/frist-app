@@ -26,12 +26,16 @@
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
   <br/>
+  <h2>Style, class and event  Binding</h2>
   <mat-radio-group aria-label="Select an option">
-    <mat-radio-button style="padding-right: 10px;color: blue;" value="1">Delhi </mat-radio-button>
-    <mat-radio-button class="female-sex" value="2">Hyderabad</mat-radio-button>
+     <mat-radio-button style="padding-right: 10px;color: blue;" value="1">Delhi </mat-radio-button>
+     <mat-radio-button class="female-sex" value="2">Hyderabad</mat-radio-button>
     <mat-radio-button [class]="classExpr" value="2" (change)="radioChange($event)" >Chennai</mat-radio-button>
-    <!-- <mat-radio-button [style]="styleExpr" value="2" (change)="vijayawadaChange($event)" >Vijayawada</mat-radio-button> -->
-    <!-- <mat-radio-button [style.font-size]="font" value="2" (change)="radioChange($event)">Mumbai</mat-radio-button> -->
+    <h2>style Binding</h2>
+    <h2>multi style Binding</h2>
+    <mat-radio-button [style]="styleExpr" value="2" (change)="vijayawadaChange($event)" >Vijayawada</mat-radio-button>
+    <h2>single style Binding</h2>
+    <mat-radio-button [style.font-size]="font" value="2" (change)="radioChange($event)">Mumbai</mat-radio-button>
   </mat-radio-group>
   <br/>
   <mat-form-field>
@@ -43,48 +47,26 @@
   </mat-form-field>
   <br/>
   <button mat-raised-button color="primary"  (click)="display()">Primary</button>
-</form>
-<!-- <form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Company (disabled)</mat-label>
-    <input matInput disabled value="Google">
+  <h1>Property Binding Examples</h1>
+  <img [src]="itemImageUrl">
+  <img bind-src="itemImageUrl">
+  <div>
+    {{hari}}
+  </div>
+  <button [disabled]= true mat-raised-button color="primary"  (click)="display()">Primary</button>
+  <h2>Property binding and interpolation</h2>
+  <p><img src="{{itemImageUrl}}"> is the <i>interpolated</i> image.</p>
+  <p><img [src]="itemImageUrl"> is the <i>property bound</i> image.</p>
+<h2>Structural Directives</h2>
+<h3>If condition</h3>
+  <img *ngIf="imageDisplay" [src]="itemImageUrl">
+  <h3>For loop</h3>
+  <mat-form-field>
+    <mat-label>State</mat-label>
+    <mat-select>
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+    </mat-select>
   </mat-form-field>
+</form>
 
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>First name</mat-label>
-      <input matInput>
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>Long Last Name That Will Be Truncated</mat-label>
-      <input matInput>
-    </mat-form-field></td>
-  </tr></table>
-
-  <p>
-    <mat-form-field class="example-full-width">
-      <mat-label>Address</mat-label>
-      <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Address 2</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field>
-  </p>
-
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>City</mat-label>
-      <input matInput placeholder="Ex. San Francisco">
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>State</mat-label>
-      <input matInput placeholder="Ex. California">
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>Postal Code</mat-label>
-      <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-      <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-    </mat-form-field></td>
-  </tr></table>
-</form> -->
