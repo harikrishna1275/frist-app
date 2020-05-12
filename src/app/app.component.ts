@@ -21,8 +21,11 @@ export class AppComponent implements OnInit {
   isUnchanged = true;
   currentStyles: {};
   currentEmployee: Employee;
+  items = ['item1', 'item2', 'item3', 'item4'];
 
-
+  addItem(newItem: string) {
+    this.items.push(newItem);
+  }
   display() {
     console.log('hello hair,I am pressed');
     this.hari = 'hello hari,I am pressed';
