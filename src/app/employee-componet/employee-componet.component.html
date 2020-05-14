@@ -1,30 +1,20 @@
-<form class="example-form">
+<form [formGroup]="userForm" class="example-form">
+
   <mat-form-field class="example-full-width">
-    <mat-label>First Name</mat-label>
-    <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-           placeholder="Bhaskar">
-    <mat-hint>First Name is Required!</mat-hint>
-    <mat-error *ngIf="emailFormControl.hasError('required')">
-      First Name is <strong>Mandatory</strong>
-    </mat-error>
+    <mat-label>Enter FirstName</mat-label>
+    <input matInput placeholder="Willam" formControlName="firstName">
   </mat-form-field>
+
   <mat-form-field class="example-full-width">
     <mat-label>Password</mat-label>
-    <input matInput [formControl]="password" [type]="'password'" [errorStateMatcher]="matcher"
-           placeholder="Enter Password">
-    <mat-hint>Password is Required!</mat-hint>
-    <mat-error *ngIf="password.hasError('required')">
-      Password is <strong>Mandatory</strong>
-    </mat-error>
+    <input matInput formControlName="password" [type]="'password'">
   </mat-form-field>
+
   <mat-form-field class="example-full-width">
     <mat-label>Confirm Password</mat-label>
-    <input matInput [formControl]="confirmPassword" [type]="'password'" [errorStateMatcher]="matcher"
-           placeholder="Enter Same Password">
-    <mat-hint>Password is Required!</mat-hint>
-    <mat-error *ngIf="confirmPassword.hasError('required')">
-     Confirm Password is <strong>Mandatory</strong>
-    </mat-error>
+    <input matInput formControlName="confirmPassword" [type]="'password'">
   </mat-form-field>
-  <button mat-raised-button color="primary"  (click)="display()">Primary</button>
+  <button mat-raised-button color="primary" (click)="saveUser()">Save</button>
+  <button mat-raised-button color="primary" style="float: right;" (click)="resetForm()">Reset</button>
+  <p>{{this.displayObject|json}}</p>
 </form>

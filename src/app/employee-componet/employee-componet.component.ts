@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroupDirective,
-  NgForm,
-  Validators,
-} from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
+import {FormGroup, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-employee-componet',
@@ -14,37 +7,33 @@ import { ErrorStateMatcher } from '@angular/material/core';
   styleUrls: ['./employee-componet.component.scss'],
 })
 export class EmployeeComponetComponent implements OnInit {
-  buttonPressed=false;
-  emailFormControl = new FormControl('', [
-    Validators.required
-  ]);
-  password = new FormControl('', [
-    Validators.required
-  ]);
-  confirmPassword = new FormControl('', [
-    Validators.required
-  ]);
-  matcher = new MyErrorStateMatcher();
+  userForm: FormGroup;
+  displayObject={};
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {
 
-  display(){
-  this.buttonPressed=true;
+    this.userForm = this.formBuilder.group({
+      firstName: '',
+      password: '',
+      confirmPassword: ''
+    });
+
+    console.log(this.userForm);
+  }
+  ngOnInit(){
   }
 
-  ngOnInit(): void {}
-}
-/** Error when invalid control is dirty, touched, or submitted. */
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(
-    control: FormControl | null,
-    form: FormGroupDirective | NgForm | null
-  ): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(
-      control &&
-      control.invalid &&
-      (control.dirty || control.touched || isSubmitted)
-    );
+  saveUser() {
+    this.displayObject={
+      "firstName":this.userForm.get('firstName').value,
+      "password":this.userForm.get('password').value,
+      "confirmPassword":this.userForm.get('confirmPassword').value,
+    }
+    // this.userForm.setValue({firstName:"katakam",password:"Mar@2020",confirmPassword:"Sep@2020"})
+    this.userForm.patchValue({firstName: 'Mahesh'});
   }
+  resetForm() {
+    this.userForm.reset();
 }
+}
+
