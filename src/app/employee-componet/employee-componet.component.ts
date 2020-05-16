@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder} from '@angular/forms';
+import {FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-employee-componet',
@@ -13,9 +13,11 @@ export class EmployeeComponetComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
 
     this.userForm = this.formBuilder.group({
-      firstName: '',
-      password: '',
-      confirmPassword: ''
+      company: new FormControl({value: 'Google', disabled: true}),
+      firstName: new FormControl({value: '', disabled: false},Validators.required),
+      password: new FormControl({value: '', disabled: false},Validators.compose(
+        [Validators.minLength(8),Validators.maxLength(10), Validators.required])),
+      confirmPassword: new FormControl({value: 'Bhaskar', disabled: false}),
     });
 
     console.log(this.userForm);
