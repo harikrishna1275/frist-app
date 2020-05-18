@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { passwordValidator } from '../custom-validators/password.directive';
 
 @Component({
   selector: 'app-employee-componet',
@@ -16,7 +17,7 @@ export class EmployeeComponetComponent implements OnInit {
     this.userForm = this.formBuilder.group({
       company: new FormControl({value : this.company, disabled: true }),
       firstName: new FormControl({ value: '', disabled: false }, Validators.required),
-      password: new FormControl({ value: '', disabled: false }, Validators.compose([Validators.minLength(8), Validators.maxLength(10), Validators.required])),
+      password: new FormControl({ value: '', disabled: false }, Validators.compose([Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{7,9}')])),
       confirmPassword: new FormControl({ value: '', disabled: false }, Validators.required),
       email: new FormControl({ value: '', disabled: false }, Validators.compose([Validators.required, Validators.email])),
       address: this.formBuilder.group(
@@ -26,7 +27,7 @@ export class EmployeeComponetComponent implements OnInit {
           city: new FormControl({ value: '', disabled: false }, Validators.required)
         }
       )
-    });
+    },{ validators: passwordValidator });
     console.log(this.userForm);
   }
   ngOnInit() {

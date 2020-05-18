@@ -2,23 +2,29 @@
 
   <mat-form-field class="example-full-width">
     <mat-label>Company Name</mat-label>
-    <input matInput  formControlName="company">
+    <input matInput formControlName="company">
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Enter FirstName</mat-label>
-    <input matInput placeholder="Willam" formControlName="firstName">
+    <input matInput placeholder="Willam" formControlName="firstName" required>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Password</mat-label>
-    <input matInput formControlName="password" [type]="'password'">
+    <input matInput formControlName="password" [type]="'text'">
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-label>Confirm Password</mat-label>
-    <input matInput formControlName="confirmPassword" [type]="'password'">
+    <input matInput formControlName="confirmPassword" [type]="'text'">
   </mat-form-field>
+  <div *ngIf="userForm.errors?.passwordRevealed">
+    password and confirm password not matched.
+  </div>
+  <div *ngIf="!userForm.errors?.passwordRevealed">
+    password and confirm password matched.
+  </div>
 
   <mat-form-field class="example-full-width">
     <mat-label>Enter Email</mat-label>
