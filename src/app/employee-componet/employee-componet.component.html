@@ -7,7 +7,7 @@
 
   <mat-form-field class="example-full-width">
     <mat-label>Enter FirstName</mat-label>
-    <input matInput placeholder="Willam" formControlName="firstName">
+    <input matInput placeholder="Willam" formControlName="firstName" required>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
@@ -44,6 +44,17 @@
       <mat-label>Enter City Name</mat-label>
       <input matInput formControlName="city">
     </mat-form-field>
+
+  </div>
+  <div formArrayName="aliases">
+    <h3>Aliases</h3> <button mat-raised-button color="primary" (click)="addAlias()">Add Form Field</button>
+    <div *ngFor="let alias of aliases.controls; let i=index">
+      <!-- The repeated alias template -->
+      <mat-form-field>
+      <mat-label>Label: {{i}}</mat-label>
+      <input matInput [formControlName]="i">
+    </mat-form-field>
+    </div>
 
   </div>
   <button mat-raised-button color="primary" [disabled]="!userForm.valid" (click)="saveUser()">Save</button>

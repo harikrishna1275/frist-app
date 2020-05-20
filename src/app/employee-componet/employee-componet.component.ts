@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators, FormArray } from '@angular/forms';
 import { passwordValidator } from '../custom-validators/password.directive';
 
 @Component({
@@ -26,12 +26,21 @@ export class EmployeeComponetComponent implements OnInit {
           landMark: new FormControl({ value: '', disabled: false }),
           city: new FormControl({ value: '', disabled: false }, Validators.required)
         }
-      )
+      ),
+      aliases: this.formBuilder.array([
+      ])
     },{ validators: passwordValidator });
     console.log(this.userForm);
   }
   ngOnInit() {
   }
+  addAlias() {
+    this.aliases.push(this.formBuilder.control('',Validators.required));
+  }
+  get aliases() {
+    return this.userForm.get('aliases') as FormArray;
+  }
+
 
   saveUser() {
     this.displayObject = {
