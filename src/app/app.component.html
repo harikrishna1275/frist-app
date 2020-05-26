@@ -104,21 +104,25 @@
 <div>This div should be {{ canSave ? "": "not"}} saveable</div> -->
 <!-- <p>parent page starts</p> -->
 <!-- <img *ngIf="imageDisplay" [src]="itemImageUrl"> -->
-<!-- <p>parent component</p>
-<p>passed value form parent component {{title}}</p>
+<!-- <p>parent component start</p>
+<p>Input</p>
+<p>passed value from parent component {{title}}</p>
 <p>
   <input [(ngModel)]="title">
 </p>
-<app-item-componet   [item]="title"></app-item-componet> -->
-<!-- <app-employee-componet></app-employee-componet> -->
-<!-- <p>parent component start here</p>
+<app-item-componet   [item1]="title"></app-item-componet>
+<p>parent component end</p> -->
+<p>parent component start here</p>
+<p>output</p>
 <p>Print the latest items</p>
 <ul>
   <li *ngFor="let item of items">{{item}}</li>
 </ul>
 <p>total no of item:{{items.length}}</p>
-<app-item-componet (newItemEvent)="addItem($event)"></app-item-componet> -->
-<!-- form controls-->
-<app-employee-componet></app-employee-componet>
+<app-item-componet (newItemEvent)="addItem($event)"></app-item-componet>
+<p>parent component end</p>
+
+ <!-- form controls
+<app-employee-componet></app-employee-componet> -->
 
 

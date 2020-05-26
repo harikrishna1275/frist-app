@@ -7,8 +7,9 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class ItemComponetComponent implements OnInit {
 
-  @Input() item: string; // decorate the property with @Input()
+  @Input() item1 :string; // decorate the property with @Input()
   @Output() newItemEvent = new EventEmitter<string>();
+  lineThrough = '';
 
   addNewItem(value: string) {
     this.newItemEvent.emit(value);
@@ -18,5 +19,7 @@ export class ItemComponetComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
 
 }

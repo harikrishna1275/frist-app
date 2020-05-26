@@ -21,10 +21,14 @@ export class AppComponent implements OnInit {
   isUnchanged = true;
   currentStyles: {};
   currentEmployee: Employee;
-  items = ['item1', 'item2', 'item3', 'item4'];
-
+  items = [];
+  count:number;
   addItem(newItem: string) {
     this.items.push(newItem);
+  }
+
+  crossOffItem(item: number) {
+   this.count=item;
   }
   display() {
     console.log('hello hair,I am pressed');
