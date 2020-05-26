@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from './model/employee';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-root',
@@ -23,9 +24,24 @@ export class AppComponent implements OnInit {
   currentEmployee: Employee;
   items = [];
   count:number;
+  item ={ "name": "Telephone",
+  "manufactureDate": "1980-02-25T05:00:00.000Z",
+  "price": 98
+   };
+   item1 ={ "name": null,
+   "manufactureDate":null,
+   "price": 98
+    };
+  events: string[] = [];
   addItem(newItem: string) {
     this.items.push(newItem);
   }
+
+
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.value}`);
+  }
+
 
   crossOffItem(item: number) {
    this.count=item;

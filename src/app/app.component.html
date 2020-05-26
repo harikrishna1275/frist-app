@@ -112,14 +112,45 @@
 </p>
 <app-item-componet   [item1]="title"></app-item-componet>
 <p>parent component end</p> -->
-<p>parent component start here</p>
-<p>output</p>
+<!-- <p>parent component start here</p>
+<p>output along with pipe</p>
 <p>Print the latest items</p>
 <ul>
-  <li *ngFor="let item of items">{{item}}</li>
+  <li *ngFor="let item of items">{{item | lowercase | uppercase}}</li>
+</ul>
+<ul>
+  <li *ngFor="let item of items">{{item  | lowercase}}</li>
+</ul>
+<ul>
+  <li *ngFor="let item of items">{{item  | uppercase}}</li>
 </ul>
 <p>total no of item:{{items.length}}</p>
 <app-item-componet (newItemEvent)="addItem($event)"></app-item-componet>
+<p>Manufacture date with date format pipe: {{item.manufactureDate | date:'short'}}</p>
+<p>Manufacture date with date format pipe: {{item.manufactureDate | date:'medium'}}</p>
+<p>Manufacture date with date format pipe: {{item.manufactureDate | date:'long'}}</p>
+<p>Manufacture date with date format pipe: {{item.manufactureDate | date:'full'}}</p>
+<p>Manufacture date with date format pipe: {{item.manufactureDate | date:'shortDate'}}</p>
+<p>Manufacture date with date format pipe: {{item.manufactureDate | date:'shortTime'}}</p>
+<p>Item json pipe: {{item | json}}</p>
+<mat-form-field>
+  <mat-label>Input & change events</mat-label>
+  <input matInput [matDatepicker]="picker"
+         (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<div class="example-events">
+  <div *ngFor="let e of events">{{e |  date:'shortTime'}}</div>
+</div> -->
+<p>safe navigation operator (?)</p>
+<p>Manufacture date with date format pipe: {{item?.manufactureDate}}</p>
+<p>Manufacture date with date format pipe: {{item1?.manufactureDate}}</p>
+<p>Manufacture date with date format pipe: {{item1.manufactureDate}}</p>
+<!-- <p>The item's color is: {{item1?.name!.toUpperCase()}}</p> -->
+<p>The item's undeclared best by date is: {{$any(item).bestByDate}}</p>
+
 <p>parent component end</p>
 
  <!-- form controls
