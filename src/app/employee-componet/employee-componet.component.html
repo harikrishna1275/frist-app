@@ -1,63 +1,76 @@
-<form [formGroup]="userForm" class="example-form">
+<mat-accordion class="example-form">
+  <mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal Data
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-card>
+      <form [formGroup]="userForm">
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Company Name</mat-label>
-    <input matInput formControlName="company">
-  </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Company Name</mat-label>
+          <input matInput formControlName="company">
+        </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Enter FirstName</mat-label>
-    <input matInput placeholder="Willam" formControlName="firstName" required>
-  </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Enter FirstName</mat-label>
+          <input matInput placeholder="Willam" formControlName="firstName" required>
+        </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Password</mat-label>
-    <input matInput formControlName="password" [type]="'text'">
-  </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" [type]="'text'">
+        </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Confirm Password</mat-label>
-    <input matInput formControlName="confirmPassword" [type]="'text'">
-  </mat-form-field>
-  <div *ngIf="userForm.errors?.passwordRevealed">
-    password and confirm password not matched.
-  </div>
-  <div *ngIf="!userForm.errors?.passwordRevealed">
-    password and confirm password matched.
-  </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput formControlName="confirmPassword" [type]="'text'">
+        </mat-form-field>
+        <div *ngIf="userForm.errors?.passwordRevealed">
+          password and confirm password not matched.
+        </div>
+        <div *ngIf="!userForm.errors?.passwordRevealed">
+          password and confirm password matched.
+        </div>
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Enter Email</mat-label>
-    <input matInput formControlName="email">
-  </mat-form-field>
-  <div formGroupName="address">
-    <h3>Address</h3>
-    <mat-form-field class="example-full-width">
-      <mat-label>Enter Street Name:</mat-label>
-      <input matInput formControlName="street">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Enter LandMark</mat-label>
-      <input matInput formControlName="landMark">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Enter City Name</mat-label>
-      <input matInput formControlName="city">
-    </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Enter Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+        <div formGroupName="address">
+          <h3>Address</h3>
+          <mat-form-field class="example-full-width">
+            <mat-label>Enter Street Name:</mat-label>
+            <input matInput formControlName="street">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Enter LandMark</mat-label>
+            <input matInput formControlName="landMark">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Enter City Name</mat-label>
+            <input matInput formControlName="city">
+          </mat-form-field>
 
-  </div>
-  <div formArrayName="aliases">
-    <h3>Aliases</h3> <button mat-raised-button color="primary" (click)="addAlias()">Add Form Field</button>
-    <div *ngFor="let alias of aliases.controls; let i=index">
-      <!-- The repeated alias template -->
-      <mat-form-field>
-      <mat-label>Label: {{i}}</mat-label>
-      <input matInput [formControlName]="i">
-    </mat-form-field>
-    </div>
+        </div>
+        <div formArrayName="aliases">
+          <h3>Aliases</h3> <button mat-raised-button color="primary" (click)="addAlias()">Add Form Field</button>
+          <div *ngFor="let alias of aliases.controls; let i=index">
+            <!-- The repeated alias template -->
+            <mat-form-field>
+              <mat-label>Label: {{i}}</mat-label>
+              <input matInput [formControlName]="i">
+            </mat-form-field>
+          </div>
 
-  </div>
-  <button mat-raised-button color="primary" [disabled]="!userForm.valid" (click)="saveUser()">Save</button>
-  <button mat-raised-button color="primary" style="float: right;" (click)="resetForm()">Reset</button>
-  <p>{{this.displayObject|json}}</p>
-</form>
+        </div>
+        <button mat-raised-button color="primary" [disabled]="!userForm.valid" (click)="saveUser()">Save</button>
+        <button mat-raised-button color="primary" style="float: right;" (click)="resetForm()">Reset</button>
+        <p>{{this.displayObject|json}}</p>
+      </form>
+    </mat-card>
+  </mat-expansion-panel>
+</mat-accordion>
+<app-company [step]="title"></app-company>
+

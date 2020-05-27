@@ -33,6 +33,19 @@ export class AppComponent implements OnInit {
    "price": 98
     };
   events: string[] = [];
+  step = 0;
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
   addItem(newItem: string) {
     this.items.push(newItem);
   }
