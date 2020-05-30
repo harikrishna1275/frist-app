@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, FormArray } from '@angular/forms';
 import { passwordValidator } from '../custom-validators/password.directive';
 
@@ -8,10 +8,11 @@ import { passwordValidator } from '../custom-validators/password.directive';
   styleUrls: ['./employee-componet.component.scss'],
 })
 export class EmployeeComponetComponent implements OnInit {
-  title=0;
   userForm: FormGroup;
   displayObject = {};
   company = "Google";
+  employeeStep=0;
+  @Output() step = new EventEmitter<number>();
 
   constructor(private formBuilder: FormBuilder) {
 
@@ -53,9 +54,10 @@ export class EmployeeComponetComponent implements OnInit {
       "landMark": this.userForm.get('address').get('landMark').value,
       "city": this.userForm.get('address').get('city').value
     }
-    this.title=1;
     // this.userForm.setValue({firstName:"katakam",password:"Mar@2020",confirmPassword:"Sep@2020"})
     // this.userForm.patchValue({ firstName: 'Mahesh' });
+    this.step.emit(1);
+    this.employeeStep=1;
   }
   resetForm() {
     this.userForm.reset();

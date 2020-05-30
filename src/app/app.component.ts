@@ -8,6 +8,7 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  companyStep=0;
   title = 'hari';
   hari = '';
   imageDisplay = true;
@@ -99,4 +100,9 @@ setEmployeeDetails(){
     this.setCurrentClasses();
     this.setEmployeeDetails();
   }
+  stepUpdate(event){
+    this.companyStep=event;
+
+  }
+
 }

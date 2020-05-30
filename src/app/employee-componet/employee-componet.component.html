@@ -1,5 +1,5 @@
 <mat-accordion class="example-form">
-  <mat-expansion-panel >
+  <mat-expansion-panel [expanded]="employeeStep === 0">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Personal Data
@@ -72,5 +72,4 @@
     </mat-card>
   </mat-expansion-panel>
 </mat-accordion>
-<app-company [step]="title"></app-company>
 

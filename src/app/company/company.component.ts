@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-company',
@@ -7,10 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CompanyComponent implements OnInit {
 
-  @Input() step :number;
+  @Input() companyStep :number;
+  @Output() step = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  continue(){
+    this.step.emit(2);
+  }
 }

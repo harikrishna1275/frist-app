@@ -154,7 +154,8 @@
 <p>parent component end</p> -->
 
   <!-- <p>form controls</p> -->
-<app-employee-componet></app-employee-componet>
-<!-- <app-company></app-company> -->
+<app-employee-componet (step)=stepUpdate($event)></app-employee-componet>
+<app-company [companyStep]=companyStep (step)=stepUpdate($event)></app-company>
+<app-education [companyStep]=companyStep></app-education>
 
 
