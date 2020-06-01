@@ -62,5 +62,8 @@ export class EmployeeComponetComponent implements OnInit {
   resetForm() {
     this.userForm.reset();
   }
+  show(){
+    console.log("called using view child from app component");
+  }
 }
 

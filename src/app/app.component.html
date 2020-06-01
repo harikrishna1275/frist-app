@@ -154,8 +154,13 @@
 <p>parent component end</p> -->
 
   <!-- <p>form controls</p> -->
-<app-employee-componet (step)=stepUpdate($event)></app-employee-componet>
-<app-company [companyStep]=companyStep (step)=stepUpdate($event)></app-company>
-<app-education [companyStep]=companyStep></app-education>
+  <mat-form-field>
+    <mat-label>Input</mat-label>
+    <input matInput placeholder="Give any changes">
+  </mat-form-field>
+  <button mat-raised-button color="primary"  (click)="display()">Primary</button>
+ <app-employee-componet (step)=stepUpdate($event)></app-employee-componet>
+<!-- <app-company [companyStep]=companyStep (step)=stepUpdate($event)></app-company>
+<app-education [companyStep]=companyStep></app-education> -->
 
 
