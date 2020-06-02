@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, SimpleChanges, OnChanges } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, SimpleChanges, OnChanges, DoCheck } from '@angular/core';
 import { Employee } from './model/employee';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { EmployeeComponetComponent } from './employee-componet/employee-componet.component';
@@ -8,12 +8,15 @@ import { EmployeeComponetComponent } from './employee-componet/employee-componet
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements  AfterViewInit,OnInit,OnChanges {
-  ngAfterViewInit(): void {
-    console.log('Values on ngAfterViewInit():');
-    console.log("employee component:", this.employee);
-    this.employee.show();
-    }
+export class AppComponent implements  OnInit,DoCheck {
+  ngDoCheck(): void {
+    console.log("do check is called");
+  }
+  // ngAfterViewInit(): void {
+  //   console.log('Values on ngAfterViewInit():');
+  //   console.log("employee component:", this.employee);
+  //   this.employee.show();
+  //   }
   companyStep=0;
   title = 'hari';
   hari = '';
@@ -41,7 +44,7 @@ export class AppComponent implements  AfterViewInit,OnInit,OnChanges {
     };
   events: string[] = [];
   step = 0;
-  @ViewChild(EmployeeComponetComponent) employee;
+  // @ViewChild(EmployeeComponetComponent) employee;
   setStep(index: number) {
     this.step = index;
   }
@@ -69,7 +72,7 @@ export class AppComponent implements  AfterViewInit,OnInit,OnChanges {
   display() {
     console.log('hello hair,I am pressed');
     this.hari = 'hello hari,I am pressed';
-    this.employee.show();
+    // this.employee.show();
   }
   radioChange($event) {
     this.font = 'large';
@@ -111,16 +114,6 @@ setEmployeeDetails(){
   stepUpdate(event){
     this.companyStep=event;
 
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log("ng on changes Called");
-    for (let propName in changes) {
-      let chng = changes[propName];
-      let cur  = JSON.stringify(chng.currentValue);
-      let prev = JSON.stringify(chng.previousValue);
-      console.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
-    }
   }
 
 }
