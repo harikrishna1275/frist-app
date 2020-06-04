@@ -10,6 +10,9 @@ import { ItemComponetComponent } from './item-componet/item-componet.component';
 import { EmployeeComponetComponent } from './employee-componet/employee-componet.component';
 import { CompanyComponent } from './company/company.component';
 import { EducationComponent } from './education/education.component';
+import { PersonalComponent } from './personal/personal.component';
+import { FamilyComponent } from './family/family.component';
+import { SalaryComponent } from './salary/salary.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { EducationComponent } from './education/education.component';
     ItemComponetComponent,
     EmployeeComponetComponent,
     CompanyComponent,
-    EducationComponent
+    EducationComponent,
+    PersonalComponent,
+    FamilyComponent,
+    SalaryComponent
   ],
   imports: [
     BrowserModule,
