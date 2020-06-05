@@ -1,4 +1,6 @@
-<mat-form-field>
-  <mat-label>Input</mat-label>
-  <input matInput [(ngModel)]="hero">
-</mat-form-field>
+<app-salary *ngFor="let j of jokes" [joke]="j">
+  <p>{{ j.setup }}</p>
+  <p >{{ j.punchline }}</p>
+</app-salary>
+<p>content Jokes</p>
+<ng-content></ng-content>

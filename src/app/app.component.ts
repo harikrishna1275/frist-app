@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, AfterViewInit, SimpleChanges, OnChanges, 
 import { Employee } from './model/employee';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { EmployeeComponetComponent } from './employee-componet/employee-componet.component';
+import { Joke } from './model/Joke';
 
 @Component({
   selector: 'app-root',
@@ -45,6 +46,10 @@ export class AppComponent implements  OnInit,DoCheck {
   events: string[] = [];
   step = 0;
   // @ViewChild(EmployeeComponetComponent) employee;
+  joke: Joke = new Joke(
+    "A kid threw a lump of cheddar at me",
+    "I thought ‘That’s not very mature’"
+  );
   setStep(index: number) {
     this.step = index;
   }
@@ -109,7 +114,7 @@ setEmployeeDetails(){
     console.log("ng onit is called");
     this.setCurrentStyles();
     this.setCurrentClasses();
-    this.setEmployeeDetails();
+    // this.setEmployeeDetails();
   }
   stepUpdate(event){
     this.companyStep=event;

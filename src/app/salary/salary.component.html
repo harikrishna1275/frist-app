@@ -1,1 +1,9 @@
-<p>salary works!</p>
+<mat-card>
+  <p>
+    <ng-content></ng-content>
+  </p>
+  <p *ngIf="!data.hide">
+    <ng-content></ng-content>
+  </p>
+  <button mat-raised-button color="primary"  (click)="data.toggle()">Tell Me</button>
+</mat-card>

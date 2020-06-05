@@ -166,9 +166,13 @@
  </mat-form-field>
  <app-company [companyStep]=companyStep [power]="title" (step)=stepUpdate($event)></app-company> -->
 <!-- <app-education [companyStep]=companyStep></app-education>  -->
-<app-personal>
-  <!-- <app-family></app-family> -->
-  <app-salary></app-salary>
-</app-personal>
+<!-- <app-personal>
+</app-personal> -->
+<app-family>
+  <app-salary [joke]="joke">
+    <p>{{ joke.setup }}</p>
+    <p >{{ joke.punchline }}</p>
+  </app-salary>
+</app-family>
 
 
