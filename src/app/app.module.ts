@@ -13,6 +13,8 @@ import { EducationComponent } from './education/education.component';
 import { PersonalComponent } from './personal/personal.component';
 import { FamilyComponent } from './family/family.component';
 import { SalaryComponent } from './salary/salary.component';
+import { ChildrenDetailsComponent } from './children-details/children-details.component';
+import { WifeDetailsComponent } from './wife-details/wife-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { SalaryComponent } from './salary/salary.component';
     EducationComponent,
     PersonalComponent,
     FamilyComponent,
-    SalaryComponent
+    SalaryComponent,
+    ChildrenDetailsComponent,
+    WifeDetailsComponent
   ],
   imports: [
     BrowserModule,
