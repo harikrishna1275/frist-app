@@ -15,6 +15,9 @@ import { FamilyComponent } from './family/family.component';
 import { SalaryComponent } from './salary/salary.component';
 import { ChildrenDetailsComponent } from './children-details/children-details.component';
 import { WifeDetailsComponent } from './wife-details/wife-details.component';
+import { FlyingHeroesPipe } from './pipes/flying-heroes.pipe';
+import { FlyingHeroesComponent } from './flying-heroes/flying-heroes.component';
+import { ToppingFilterPipe } from './pipes/topping-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { WifeDetailsComponent } from './wife-details/wife-details.component';
     FamilyComponent,
     SalaryComponent,
     ChildrenDetailsComponent,
-    WifeDetailsComponent
+    WifeDetailsComponent,
+    FlyingHeroesPipe,
+    FlyingHeroesComponent,
+    ToppingFilterPipe
   ],
   imports: [
     BrowserModule,
